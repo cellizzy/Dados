@@ -7,6 +7,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -14,10 +15,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.modifier.modifierLocalOf
 import androidx.compose.ui.node.modifierElementOf
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.dados.ui.theme.DadosTheme
 
 class MainActivity : ComponentActivity() {
@@ -42,6 +47,20 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun RolaDados(){
+    var resultado=1
+    Text(
+        text ="Gire o dado",
+        modifier = Modifier.fillMaxWidth(),
+        fontSize = 35.sp,
+        textAlign = TextAlign.Center,
+        fontWeight = FontWeight.Bold,
+        color = Color.Black
+
+    )
+
+
+
+
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -52,7 +71,9 @@ fun RolaDados(){
         contentDescription =null
     )
         Button(
-            onClick = { /*TODO*/ }
+            onClick = {
+                resultado=(1..6).random()
+            }
         ) {
             Text(
                 text ="Botão" )
